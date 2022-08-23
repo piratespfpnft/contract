@@ -14,8 +14,8 @@ contract Pirates is Ownable, ERC721A, ReentrancyGuard {
     using ECDSA for bytes32;
 
     // mint configuration
-    address public whiteListSigner;        // WhiteList signer wallet address
-    address public waitListSigner;         // WaitList signer wallet address
+    address public whiteListSigner; // WhiteList signer wallet address
+    address public waitListSigner;  // WaitList signer wallet address
     uint256 public maxMint = 2;     // mint per wallet
     uint256 public mintPause = 1;   // 0 = unpaused , 1 = paused
     uint256 public mintPhase = 0;   // 0 = not started , 1 = whitelistMint, 2 = waitlist, 3 = publicMint
@@ -78,6 +78,11 @@ contract Pirates is Ownable, ERC721A, ReentrancyGuard {
 
     // setter function for mint configuration
 
+    function setMintConfig(uint256 _mintPause, uint256 _mintPhase) external onlyOwner {
+        mintPause = _mintPause;
+        mintPhase = _mintPhase;
+    }
+
     function setMaxMint(uint256 _maxMint) external onlyOwner {
         maxMint = _maxMint;
     }
@@ -121,6 +126,13 @@ contract Pirates is Ownable, ERC721A, ReentrancyGuard {
     function withdrawMoney() external onlyOwner {
         (bool success, ) = msg.sender.call{value: address(this).balance}("");
         require(success, "Transfer failed.");
+    }
+
+    // burn
+
+    /// @notice Limits the COLLECTION_SIZE to the current totalSupply
+    function burn() external onlyOwner {
+        COLLECTION_SIZE = totalSupply();
     }
 
     // verify mint key

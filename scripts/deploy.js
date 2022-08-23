@@ -16,8 +16,8 @@ async function main() {
   // We get the contract to deploy
   const Pirates = await hre.ethers.getContractFactory("Pirates");
   const contract = await Pirates.deploy(
-    "https://test-pop.mypinata.cloud/ipfs/QmT5JERZcZRHTzodGTcfNcQrUSnNpU2XjhRuzWyh9YgmR9/",
-    "https://test-pop.mypinata.cloud/ipfs/QmX6X3j3UYkgsm2PjhpmnM8cGcYHsdRHqQcHb3vhx9JRtS"
+    "baseuri",
+    "https://test-pop.mypinata.cloud/ipfs/QmRRPD2Y6a9QrJ54YNJ3yKXrCAmFMAzAK7uiGgVP5e4sUs"
   );
 
   await contract.deployed();
