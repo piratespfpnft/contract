@@ -1,0 +1,8 @@
+{
+    "name": "Pirates",
+    "description": "description",
+    "image": "imagelink",
+    "external_link": "external_link",
+    "seller_fee_basis_points": 750,
+    "fee_recipient": "0xeff390c1D94e5b33d03bEa6E7bb9389C31d5BBaD"
+}
