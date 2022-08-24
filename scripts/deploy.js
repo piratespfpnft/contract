@@ -16,8 +16,7 @@ async function main() {
   // We get the contract to deploy
   const Pirates = await hre.ethers.getContractFactory("Pirates");
   const contract = await Pirates.deploy(
-    "baseuri",
-    "https://test-pop.mypinata.cloud/ipfs/QmRRPD2Y6a9QrJ54YNJ3yKXrCAmFMAzAK7uiGgVP5e4sUs"
+    "https://piratesnft.mypinata.cloud/ipfs/QmVWrzyP1yEywoPaD3eFdNv2UuQRENmpMDp6S136CsGPYD"
   );
 
   await contract.deployed();
@@ -27,6 +26,8 @@ async function main() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
+//https://rinkeby.etherscan.io/address/0x044f31fbef9e2Fd0732B8B9fDb17dE7f1EB4db9d#readContract
+//whitelist -> 0xcD6F5a34Dda72595a3870b45c10afD55a655EcB8
 main()
   .then(() => process.exit(0))
   .catch((error) => {

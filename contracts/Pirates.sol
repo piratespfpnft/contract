@@ -29,10 +29,8 @@ contract Pirates is Ownable, ERC721A, ReentrancyGuard {
     uint256 public COLLECTION_SIZE = 3200;
 
     constructor(
-        string memory initBaseURI,
         string memory initContractURI
     ) ERC721A("Pirates", "PIRATES") {
-        baseURI = initBaseURI;
         _contractURI = initContractURI;
     }
 
