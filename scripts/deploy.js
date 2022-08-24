@@ -28,6 +28,7 @@ async function main() {
 // and properly handle errors.
 //https://rinkeby.etherscan.io/address/0x044f31fbef9e2Fd0732B8B9fDb17dE7f1EB4db9d#readContract
 //whitelist -> 0xcD6F5a34Dda72595a3870b45c10afD55a655EcB8
+//waitlist -> 0x228466112692dC27D7C7C7C62c65f7097B5323cc
 main()
   .then(() => process.exit(0))
   .catch((error) => {
